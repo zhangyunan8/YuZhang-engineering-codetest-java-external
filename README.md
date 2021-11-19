@@ -22,8 +22,14 @@ make it more logical and reusable.
 notifications.  You DO NOT need to write code that will actually send an email - just show 
 how the class will fit into the application and provide similar functionality.
 
-3. Explain your decisions.  This could be through your git activity for the work you change, and 
-a separate document for other thoughts.  We're as interested in what you'd like to do as what you've done. 
+3. Document the next steps.  You are not expected to commit enough time to 'finish' this project, 
+just the tasks specified above.  However, consider what you would do next as if you were planning 
+your next week's work.  Bullet points are fine, enough so we can understand the intent and discuss 
+in the interview.
+
+4. Explain your decisions.  This could be through your git activity for the work you change, and 
+a separate document for other thoughts.  We're as interested in what you'd like to do as what you've done.
+If you've also got some feedback on this exercise, we'd be interested to receive it.
 
 ## Approach
 1. Included in the attached zip archive are classes and a `pom.xml` file to enable you 
@@ -50,6 +56,11 @@ analysing this to see your approach and to get an idea as to how long you spent 
 7. There is no time limit set for this task, rather a time boundary.  Use the time you have available 
 as best you can, and use your handover document to explain your prioritisation decisions and how you 
 would have continued if you'd had the chance.
+
+## Submission artefacts
+1. Link to GitHub repository with submission.
+2. Document with next steps.
+3. (Optional) Document explaining submission, other thoughts/comments, exercise feedback.
 
 ## Manifest
 - `Controller\CoffeeBreakPreferenceController`
