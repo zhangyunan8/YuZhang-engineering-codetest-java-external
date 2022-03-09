@@ -1,23 +1,27 @@
 package com.awin.coffeebreak.controller;
 
+import com.awin.coffeebreak.dto.CoffeeBreakRequest;
 import com.awin.coffeebreak.entity.CoffeeBreakPreference;
 import com.awin.coffeebreak.entity.StaffMember;
 import com.awin.coffeebreak.repository.CoffeeBreakPreferenceRepository;
 import com.awin.coffeebreak.repository.StaffMemberRepository;
+import com.awin.coffeebreak.services.CoffeeBreakService;
 import com.awin.coffeebreak.services.SlackNotifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CoffeeBreakPreferenceController {
 
+    public CoffeeBreakService coffeeBreakService;
     public CoffeeBreakPreferenceRepository coffeeBreakPreferenceRepository;
     public StaffMemberRepository staffMemberRepository;
 
@@ -25,6 +29,11 @@ public class CoffeeBreakPreferenceController {
           CoffeeBreakPreferenceRepository coffeeBreakPreferenceRepository
     ) {
         this.coffeeBreakPreferenceRepository = coffeeBreakPreferenceRepository;
+    }
+
+    @PostMapping(path = "/requestCoffeeBreak")
+    public void addCoffeeBreak(@RequestBody CoffeeBreakRequest coffeeBreakRequest) {
+        coffeeBreakService.requestCoffeeBreak(coffeeBreakRequest);
     }
 
     /**
