@@ -1,15 +1,12 @@
 package com.awin.coffeebreak.entity;
 
-import java.sql.Date;
 import java.time.Instant;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -39,6 +36,7 @@ public class CoffeeBreakPreference {
     Instant requestedDate;
 
     @Column
+    @ElementCollection
     Map<String, String> details;
 
     public CoffeeBreakPreference(
@@ -60,7 +58,7 @@ public class CoffeeBreakPreference {
         this.type = type;
 
         this.requestedBy = requestedBy;
-        if(!details.isEmpty()) {
+        if (!details.isEmpty()) {
             setDetails(details);
         } else {
             setDetails(new HashMap<>());
@@ -119,9 +117,9 @@ public class CoffeeBreakPreference {
     }
 
     public String getAsXml() {
-        return "<preference type=\""+type+"\" subtype=\""+subType+"\">" +
-              "<requestedBy>"+requestedBy+"</requestedBy>" +
-              "<details>"+details+"</details>" +
+        return "<preference type=\"" + type + "\" subtype=\"" + subType + "\">" +
+              "<requestedBy>" + requestedBy + "</requestedBy>" +
+              "<details>" + details + "</details>" +
               "</preference>";
     }
 
