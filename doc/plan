@@ -1,0 +1,54 @@
+
+Awin CoffeeBreak modification Mini Project
+
+Plan
+    •	Preparation:
+        o	To check / install tools,
+        o	To setup project in development environment
+    •	Analysis: requirements, scale, specs, etc.
+    •	Technology selection
+    •	Design
+    •	Implementation
+    •	Testing
+    •	Product release and support
+Preparation
+    •	Tools: git, github account, IDE (IntelliJ)              -- done
+    •	Repo: fork a branch, clone the repo to local git        -- done
+    •	To establish a project in IntelliJ from the local repo  -- done
+Analysis
+    •	Requirements
+        o	Input: coffee preference; slack ID / email
+        o	Output: JSON / XML / HTML / Email
+        o	Users: Teams’ members, admin user
+        o	Client: slack
+        o	Fork a git repo, keep history
+        o	DB?
+        o	Logs
+        o	Monitoring
+        o	CS assessment
+    •	Existing project
+    •	Scale
+    •	Specs
+Technology selection
+    By checking the pom.xml file, it is a Spring boot project
+    Design
+Implementation
+    •	Create application
+        o	Required features
+            •   add team
+            •   CRUD
+        o	Logs
+    o	monitoring
+    •	Create dockerfile
+    •	Build docker image
+    •	Run docker image in a container
+    •	Test
+Testing
+    •	Manual: Postman
+    •	Automated: Junit
+Product release and support
+    CS Assessment
+        •	Source code and binary scans
+        •	Pen testing, etc.
+    Production Support
+        •	Hand over to support team

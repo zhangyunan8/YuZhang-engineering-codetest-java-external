@@ -9,11 +9,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "coffee_break_preference")
@@ -38,11 +34,13 @@ public class CoffeeBreakPreference {
     @Column
     Instant requestedDate;
 
+    //JPA 2 implementation
+    @ElementCollection
     @Column
     Map<String, String> details;
 
     public CoffeeBreakPreference(
-          final String type, final String subType, final StaffMember requestedBy, final Map<String, String> details
+            final String type, final String subType, final StaffMember requestedBy, final Map<String, String> details
     ) {
         if (!TYPES.contains(type)) {
             throw new IllegalArgumentException();
@@ -109,26 +107,26 @@ public class CoffeeBreakPreference {
 
     public String getAsJson() {
         return "{" +
-              "\"id\":" + id +
-              ", \"type\":\"" + type + '"' +
-              ", \"subType\":\"" + subType + '"' +
-              ", \"requestedBy\":\"" + requestedBy + '"' +
-              ", \"requestedDate\":\"" + requestedDate + '"' +
-              ", \"details\":\"" + details + '"' +
-              '}';
+                "\"id\":" + id +
+                ", \"type\":\"" + type + '"' +
+                ", \"subType\":\"" + subType + '"' +
+                ", \"requestedBy\":\"" + requestedBy + '"' +
+                ", \"requestedDate\":\"" + requestedDate + '"' +
+                ", \"details\":\"" + details + '"' +
+                '}';
     }
 
     public String getAsXml() {
         return "<preference type=\""+type+"\" subtype=\""+subType+"\">" +
-              "<requestedBy>"+requestedBy+"</requestedBy>" +
-              "<details>"+details+"</details>" +
-              "</preference>";
+                "<requestedBy>"+requestedBy+"</requestedBy>" +
+                "<details>"+details+"</details>" +
+                "</preference>";
     }
 
     public String getAsListElement() {
         final String detailsString = details.keySet().stream()
-              .map(e -> e + " : " + details.get(e))
-              .collect(Collectors.joining(","));
+                .map(e -> e + " : " + details.get(e))
+                .collect(Collectors.joining(","));
 
         return "<li>" + requestedBy.getName() + " would like a " + subType + ". (" + detailsString + ")</li>";
     }

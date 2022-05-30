@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
+// for dependency injection
+
 public interface CoffeeBreakPreferenceRepository extends CrudRepository<CoffeeBreakPreference, Integer> {
 
     default List<CoffeeBreakPreference> getPreferencesForToday() {
@@ -24,5 +26,6 @@ public interface CoffeeBreakPreferenceRepository extends CrudRepository<CoffeeBr
           @Param("start") Instant start,
           @Param("end") Instant end
     );
+
 
 }
