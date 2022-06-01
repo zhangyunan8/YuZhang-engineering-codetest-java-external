@@ -1,7 +1,11 @@
 package com.awin.coffeebreak.entity;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.sql.Date;
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -14,7 +18,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "coffee_break_preference")
 public class CoffeeBreakPreference {
-
+    //private final Logger log = LoggerFactory.getLogger(this.getClass());
     public static List<String> TYPES = List.of("food", "drink");
     public static List<String> DRINK_TYPES = List.of("coffee", "tea");
     public static List<String> FOOD_TYPES = List.of("sandwich", "crisps", "toast");
@@ -28,7 +32,7 @@ public class CoffeeBreakPreference {
     @Column
     String subType;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.ALL})
     StaffMember requestedBy;
 
     @Column
@@ -40,8 +44,9 @@ public class CoffeeBreakPreference {
     Map<String, String> details;
 
     public CoffeeBreakPreference(
-            final String type, final String subType, final StaffMember requestedBy, final Map<String, String> details
+            final int id, final String type, final String subType, final StaffMember requestedBy, final Map<String, String> details
     ) {
+        setId(id);
         if (!TYPES.contains(type)) {
             throw new IllegalArgumentException();
         }
@@ -56,7 +61,10 @@ public class CoffeeBreakPreference {
         }
 
         this.type = type;
-
+        //save subtype
+        setSubType(subType);
+        //set current date
+        setRequestedDate(Instant.now().truncatedTo(ChronoUnit.DAYS));
         this.requestedBy = requestedBy;
         if(!details.isEmpty()) {
             setDetails(details);
@@ -65,10 +73,19 @@ public class CoffeeBreakPreference {
         }
     }
 
+    public CoffeeBreakPreference() {
+
+    }
+
     public String getType() {
         return type;
     }
-
+    public void setId(final int id) {
+        this.id = id;
+    }
+    public int getId(){
+        return this.id;
+    }
     public void setType(final String type) {
         this.type = type;
     }
@@ -106,20 +123,21 @@ public class CoffeeBreakPreference {
     }
 
     public String getAsJson() {
+        System.out.println("id: " + id + "; getId: "+ getId() +" type: " + type + ", details: " +details.toString());
         return "{" +
                 "\"id\":" + id +
                 ", \"type\":\"" + type + '"' +
                 ", \"subType\":\"" + subType + '"' +
-                ", \"requestedBy\":\"" + requestedBy + '"' +
+                ", \"requestedBy\":\"" + requestedBy.getName() + '"' + // changed to get name, requestedBy is an object
                 ", \"requestedDate\":\"" + requestedDate + '"' +
-                ", \"details\":\"" + details + '"' +
+                ", \"details\":\"" + details.toString() + '"' + // convert Map to string
                 '}';
     }
 
     public String getAsXml() {
         return "<preference type=\""+type+"\" subtype=\""+subType+"\">" +
-                "<requestedBy>"+requestedBy+"</requestedBy>" +
-                "<details>"+details+"</details>" +
+                "<requestedBy>"+requestedBy.getName()+"</requestedBy>" +
+                "<details>"+details.toString()+"</details>" +
                 "</preference>";
     }
 

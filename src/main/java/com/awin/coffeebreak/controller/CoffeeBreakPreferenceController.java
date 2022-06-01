@@ -4,39 +4,51 @@ import com.awin.coffeebreak.entity.CoffeeBreakPreference;
 import com.awin.coffeebreak.entity.StaffMember;
 import com.awin.coffeebreak.repository.CoffeeBreakPreferenceRepository;
 import com.awin.coffeebreak.repository.StaffMemberRepository;
+import com.awin.coffeebreak.services.CoffeeBreakPreferenceService;
 import com.awin.coffeebreak.services.SlackNotifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CoffeeBreakPreferenceController {
 
-    public CoffeeBreakPreferenceRepository coffeeBreakPreferenceRepository;
+    //public CoffeeBreakPreferenceRepository coffeeBreakPreferenceRepository;
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
+    private CoffeeBreakPreferenceService coffeeBreakPreferenceService;
     public StaffMemberRepository staffMemberRepository;
-
+    /*
     public CoffeeBreakPreferenceController(
           CoffeeBreakPreferenceRepository coffeeBreakPreferenceRepository
     ) {
         this.coffeeBreakPreferenceRepository = coffeeBreakPreferenceRepository;
     }
-
+    */
+    @Autowired
+    public CoffeeBreakPreferenceController(
+            CoffeeBreakPreferenceService coffeeBreakPreferenceService
+    ) {
+        this.coffeeBreakPreferenceService = coffeeBreakPreferenceService;
+    }
     /**
      * Publishes the list of preferences in the requested format
      */
     @GetMapping(path = "/today")
     public ResponseEntity<?> today(@RequestParam("format") String format) {
+        log.debug("/today" + ": format: "+format);
         if (format == null) {
             format = "html";
         }
 
-        List<CoffeeBreakPreference> t = coffeeBreakPreferenceRepository.getPreferencesForToday();
+        List<CoffeeBreakPreference> t = coffeeBreakPreferenceService.getPreferencesForToday();
 
         String responseContent;
         String contentType = "text/html";
@@ -77,8 +89,9 @@ public class CoffeeBreakPreferenceController {
 
     private String getJsonForResponse(final List<CoffeeBreakPreference> list) {
         String responseJson = "{\"preferences\":[";
-
+        log.debug("getJsonForResponse");
         for (final CoffeeBreakPreference p : list) {
+            log.debug("JSON:for loop");
             responseJson += p.getAsJson();
         }
 
@@ -106,5 +119,9 @@ public class CoffeeBreakPreferenceController {
         }
 
         return responseJson + "</ul>";
+    }
+    @RequestMapping(method= RequestMethod.POST, value="/coffeeBreakPreference")
+    public void addCoffeeBreakPreference(@RequestBody CoffeeBreakPreference coffeeBreakPreference){
+        coffeeBreakPreferenceService.addCoffeeBreakPreference(coffeeBreakPreference);
     }
 }

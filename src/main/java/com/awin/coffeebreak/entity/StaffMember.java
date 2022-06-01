@@ -2,17 +2,14 @@ package com.awin.coffeebreak.entity;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "staff_member")
 public class StaffMember {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY) // for the issue of "ids for this class must be manually assigned before calling save()"
     Integer id;
 
     @Column
@@ -24,12 +21,22 @@ public class StaffMember {
     @Column
     String slackIdentifier;
 
+    //why ?
     @OneToMany
     List<CoffeeBreakPreference> coffeeBreakPreferences = new ArrayList<>();
 
+    // add a constructor here in order to be able to initialize a staffmember
+    public StaffMember(){}
+    public StaffMember(String name, String email, String slackId){
+        setName(name);
+        setEmail(email);
+        setSlackIdentifier(slackId);
+        //setCoffeeBreakPreferences(coffeeBreakPreferences);
+    }
     public Integer getId() {
         return id;
     }
+
 
     public String getName() {
         return name;

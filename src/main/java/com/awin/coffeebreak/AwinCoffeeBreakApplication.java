@@ -1,5 +1,8 @@
 package com.awin.coffeebreak;
 
+import com.awin.coffeebreak.entity.CoffeeBreakPreference;
+import com.awin.coffeebreak.entity.StaffMember;
+import com.awin.coffeebreak.services.CoffeeBreakPreferenceService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,6 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import java.util.Arrays;
+import java.util.Map;
 
 @SpringBootApplication
 public class AwinCoffeeBreakApplication {
@@ -29,4 +33,5 @@ public class AwinCoffeeBreakApplication {
 
 		};
 	} */
+
 }
