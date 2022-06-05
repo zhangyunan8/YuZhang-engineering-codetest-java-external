@@ -6,11 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.sql.Date;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.persistence.*;
@@ -64,7 +60,8 @@ public class CoffeeBreakPreference {
         //save subtype
         setSubType(subType);
         //set current date
-        setRequestedDate(Instant.now().truncatedTo(ChronoUnit.DAYS));
+        //setRequestedDate(Instant.now().truncatedTo(ChronoUnit.DAYS));
+        setRequestedDate(Instant.now());
         this.requestedBy = requestedBy;
         if(!details.isEmpty()) {
             setDetails(details);
