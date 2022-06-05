@@ -12,7 +12,7 @@ class SlackNotifierSpec extends Specification {
         given:
         def staff = new StaffMember()
         staff.setSlackIdentifier("ABC123")
-        def preference = new CoffeeBreakPreference("drink", "coffee", staff, null)
+        def preference = new CoffeeBreakPreference(1,"drink", "coffee", staff, null)
 
         def notificationService = new SlackNotifier()
 
@@ -26,7 +26,7 @@ class SlackNotifierSpec extends Specification {
     def "testThrowsExceptionWhenCannotNotify"() {
         given:
         def staff = new StaffMember()
-        def preference = new CoffeeBreakPreference("drink", "tea", staff, null)
+        def preference = new CoffeeBreakPreference(2,"drink", "tea", staff, null)
         def notificationService = new SlackNotifier()
 
         when:

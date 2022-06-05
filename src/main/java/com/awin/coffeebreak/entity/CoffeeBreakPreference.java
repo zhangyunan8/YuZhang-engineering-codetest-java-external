@@ -63,7 +63,8 @@ public class CoffeeBreakPreference {
         //setRequestedDate(Instant.now().truncatedTo(ChronoUnit.DAYS));
         setRequestedDate(Instant.now());
         this.requestedBy = requestedBy;
-        if(!details.isEmpty()) {
+        //debug: check if details is null as well
+        if(details != null && !details.isEmpty()) {
             setDetails(details);
         } else {
             setDetails(new HashMap<>());

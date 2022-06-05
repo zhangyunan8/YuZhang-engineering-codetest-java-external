@@ -22,7 +22,7 @@ public class CoffeeBreakPreferenceController {
 
     //public CoffeeBreakPreferenceRepository coffeeBreakPreferenceRepository;
     private final Logger log = LoggerFactory.getLogger(this.getClass());
-    private CoffeeBreakPreferenceService coffeeBreakPreferenceService;
+    private final CoffeeBreakPreferenceService coffeeBreakPreferenceService;
     public StaffMemberRepository staffMemberRepository;
     /*
     public CoffeeBreakPreferenceController(
@@ -93,7 +93,7 @@ public class CoffeeBreakPreferenceController {
         log.debug("getJsonForResponse");
         for (final CoffeeBreakPreference p : list) {
             log.debug("JSON:for loop");
-            responseJson += p.getAsJson();
+            responseJson += coffeeBreakPreferenceService.getAsJson(p);
         }
 
         return responseJson += "]}";
@@ -104,7 +104,7 @@ public class CoffeeBreakPreferenceController {
         responseJson += "<Preferences>";
 
         for (final CoffeeBreakPreference p : list) {
-            responseJson += p.getAsXml();
+            responseJson += coffeeBreakPreferenceService.getAsXml(p);
         }
 
         responseJson += "</Preferences>";
@@ -116,12 +116,14 @@ public class CoffeeBreakPreferenceController {
         String responseJson = "<ul>";
 
         for (final CoffeeBreakPreference p : list) {
-            responseJson += p.getAsListElement();
+            responseJson += coffeeBreakPreferenceService.getAsListElement(p);
         }
 
         return responseJson + "</ul>";
     }
-    @RequestMapping(method= RequestMethod.POST, value="/coffeeBreakPreference")
+
+
+    @PostMapping("/addPreference")
     @Qualifier("CoffeeBreakService")
     public void addCoffeeBreakPreference(@RequestBody CoffeeBreakPreference coffeeBreakPreference){
         coffeeBreakPreferenceService.addCoffeeBreakPreference(coffeeBreakPreference);

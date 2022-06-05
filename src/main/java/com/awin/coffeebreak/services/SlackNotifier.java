@@ -12,8 +12,8 @@ public class SlackNotifier {
      * returns true of false status of notification sent
      */
     public boolean notifyStaffMember(final StaffMember staffMember, final List<CoffeeBreakPreference> preferences) {
-
-        if (staffMember.getSlackIdentifier() == "") {
+        // debug: also need to check if slack identifier exist or if it is empty
+        if (staffMember.getSlackIdentifier() == null || staffMember.getSlackIdentifier().isEmpty()) {
             throw new RuntimeException();
         }
 
