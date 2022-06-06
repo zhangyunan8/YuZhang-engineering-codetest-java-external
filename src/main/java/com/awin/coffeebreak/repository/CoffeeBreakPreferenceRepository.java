@@ -13,6 +13,7 @@ import org.springframework.data.repository.query.Param;
 public interface CoffeeBreakPreferenceRepository extends CrudRepository<CoffeeBreakPreference, Integer> {
 
     List<CoffeeBreakPreference> findByRequestedDateBetween(Instant start, Instant end);
+    List<CoffeeBreakPreference> findAll();
     /** the implementation should not be here, move to implementation service class **/
     /*
     default List<CoffeeBreakPreference> getPreferencesForToday() {

@@ -2,9 +2,11 @@ package com.awin.coffeebreak.services;
 
 import com.awin.coffeebreak.entity.CoffeeBreakPreference;
 import com.awin.coffeebreak.repository.CoffeeBreakPreferenceRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -51,6 +53,16 @@ public class CoffeeBreakPreferenceServiceImpl implements CoffeeBreakPreferenceSe
 
     public String getAsJson(CoffeeBreakPreference coffeeBreakPreference) {
         System.out.println("getId: "+ coffeeBreakPreference.getId() +" type: " + coffeeBreakPreference.getType() + ", details: " +coffeeBreakPreference.getDetails().toString());
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonString = "";
+        try {
+            jsonString = mapper.writeValueAsString(coffeeBreakPreference);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        return jsonString;
+        /*
         return "{" +
                 "\"id\":" + coffeeBreakPreference.getId() +
                 ", \"type\":\"" + coffeeBreakPreference.getType() + '"' +
@@ -59,6 +71,8 @@ public class CoffeeBreakPreferenceServiceImpl implements CoffeeBreakPreferenceSe
                 ", \"requestedDate\":\"" + coffeeBreakPreference.getRequestedDate() + '"' +
                 ", \"details\":\"" + coffeeBreakPreference.getDetails().toString() + '"' + // convert Map to string
                 '}';
+
+         */
     }
 
     public String getAsXml(CoffeeBreakPreference coffeeBreakPreference) {

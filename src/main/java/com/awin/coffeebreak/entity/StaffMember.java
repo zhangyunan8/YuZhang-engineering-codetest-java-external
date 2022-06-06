@@ -1,5 +1,7 @@
 package com.awin.coffeebreak.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
@@ -9,21 +11,25 @@ import javax.persistence.*;
 public class StaffMember {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY) // for the issue of "ids for this class must be manually assigned before calling save()"
-    Integer id;
+    @GeneratedValue(strategy=GenerationType.SEQUENCE) // for the issue of "ids for this class must be manually assigned before calling save()"
+    private Long id;
 
     @Column
-    String name;
+    private String name;
 
     @Column
-    String email;
+    private String email;
 
     @Column
-    String slackIdentifier;
+    private String slackIdentifier;
 
-    //why ?
-    @OneToMany
-    List<CoffeeBreakPreference> coffeeBreakPreferences = new ArrayList<>();
+    @JsonManagedReference
+    @OneToMany(mappedBy="requestedBy")
+    private List<CoffeeBreakPreference> coffeeBreakPreferences = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "team_Id")
+    private Team team;
 
     // add a constructor here in order to be able to initialize a staffmember
     public StaffMember(){}
@@ -33,10 +39,13 @@ public class StaffMember {
         setSlackIdentifier(slackId);
         //setCoffeeBreakPreferences(coffeeBreakPreferences);
     }
-    public Integer getId() {
-        return id;
+    public int getId() {
+        return this.id != null ? this.id.intValue() : 0;
     }
 
+    public void setId(int id) {
+        this.id = Long.valueOf(id);
+    }
 
     public String getName() {
         return name;

@@ -1,5 +1,6 @@
 package com.awin.coffeebreak.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,24 +21,27 @@ public class CoffeeBreakPreference {
     public static List<String> FOOD_TYPES = List.of("sandwich", "crisps", "toast");
 
     @Id
-    Integer id;
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    private Long id;
 
     @Column
-    String type;
+    private String type;
 
     @Column
-    String subType;
+    private String subType;
 
+    @JsonBackReference // stop infinite recursion on bidirectional relationship
     @ManyToOne(cascade = {CascadeType.ALL})
-    StaffMember requestedBy;
+    @JoinColumn(name = "staff_Id")
+    private StaffMember requestedBy;
 
     @Column
-    Instant requestedDate;
+    private Instant requestedDate;
 
     //JPA 2 implementation
     @ElementCollection
     @Column
-    Map<String, String> details;
+    private Map<String, String> details;
 
     public CoffeeBreakPreference(
             final int id, final String type, final String subType, final StaffMember requestedBy, final Map<String, String> details
@@ -79,10 +83,11 @@ public class CoffeeBreakPreference {
         return type;
     }
     public void setId(final int id) {
-        this.id = id;
+        this.id = Long.valueOf(id);
     }
     public int getId(){
-        return this.id;
+        //JDK 11 compiler automatically convert Integer to int, but, thought it would be good to keep the old fashion
+        return this.id != null ? this.id.intValue() : 0;
     }
     public void setType(final String type) {
         this.type = type;
@@ -119,7 +124,7 @@ public class CoffeeBreakPreference {
     public Map<String, String> getDetails() {
         return details;
     }
-
+/*
     public String getAsJson() {
         System.out.println("id: " + id + "; getId: "+ getId() +" type: " + type + ", details: " +details.toString());
         return "{" +
@@ -146,4 +151,6 @@ public class CoffeeBreakPreference {
 
         return "<li>" + requestedBy.getName() + " would like a " + subType + ". (" + detailsString + ")</li>";
     }
+
+ */
 }
