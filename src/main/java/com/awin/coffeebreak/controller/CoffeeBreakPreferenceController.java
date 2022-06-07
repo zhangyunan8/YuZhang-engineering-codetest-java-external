@@ -4,6 +4,7 @@ import com.awin.coffeebreak.entity.CoffeeBreakPreference;
 import com.awin.coffeebreak.entity.StaffMember;
 import com.awin.coffeebreak.repository.StaffMemberRepository;
 import com.awin.coffeebreak.services.CoffeeBreakPreferenceService;
+import com.awin.coffeebreak.services.Content;
 import com.awin.coffeebreak.services.SlackNotifier;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,17 @@ public class CoffeeBreakPreferenceController {
     ) {
         this.coffeeBreakPreferenceService = coffeeBreakPreferenceService;
     }
+
+    @GetMapping(path = "/findAll")
+    @Qualifier("CoffeeBreakService")
+    public ResponseEntity<?> findAll(@RequestParam("format") String format){
+        Content content = new Content("", "");
+        coffeeBreakPreferenceService.getAllPreferenceContent(content, format);
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.valueOf(content.getContentType()))
+                .body(content.getResponseContent());
+    }
     /**
      * Publishes the list of preferences in the requested format
      */
@@ -44,35 +56,11 @@ public class CoffeeBreakPreferenceController {
     @Qualifier("CoffeeBreakService")
     public ResponseEntity<?> today(@RequestParam("format") String format) {
         log.debug("/today" + ": format: "+format);
-        if (format == null) {
-            format = "html";
-        }
-
-        List<CoffeeBreakPreference> t = coffeeBreakPreferenceService.getPreferencesForToday();
-
-        String responseContent;
-        String contentType = "text/html";
-
-        switch (format) {
-            case "json":
-                responseContent = getJsonForResponse(t);
-                contentType = "application/json";
-                break;
-
-            case "xml":
-                responseContent = getXmlForResponse(t);
-                contentType = "text/xml";
-                break;
-
-            default:
-                String formattedPreferences = getHtmlForResponse(t);
-                return ResponseEntity.ok().contentType(MediaType.valueOf(contentType))
-                      .body(formattedPreferences);
-        }
-
+        Content content = new Content("", "");
+        coffeeBreakPreferenceService.getPreferencesForTodayContent(content, format);
         return ResponseEntity.ok()
-              .contentType(MediaType.valueOf(contentType))
-              .body(responseContent);
+                .contentType(MediaType.valueOf(content.getContentType()))
+                .body(content.getResponseContent());
     }
 
     @GetMapping("/notifyStaffMember")
@@ -88,44 +76,10 @@ public class CoffeeBreakPreferenceController {
         return ResponseEntity.ok(ok ? "OK" : "NOT OK");
     }
 
-    private String getJsonForResponse(final List<CoffeeBreakPreference> list) {
-        String responseJson = "{\"preferences\":[";
-        log.debug("getJsonForResponse");
-        for (final CoffeeBreakPreference p : list) {
-            log.debug("JSON:for loop");
-            responseJson += coffeeBreakPreferenceService.getAsJson(p);
-        }
-
-        return responseJson += "]}";
-    }
-
-    private String getXmlForResponse(List<CoffeeBreakPreference> list) {
-        String responseJson = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
-        responseJson += "<Preferences>";
-
-        for (final CoffeeBreakPreference p : list) {
-            responseJson += coffeeBreakPreferenceService.getAsXml(p);
-        }
-
-        responseJson += "</Preferences>";
-
-        return responseJson;
-    }
-
-    private String getHtmlForResponse(final List<CoffeeBreakPreference> list) {
-        String responseJson = "<ul>";
-
-        for (final CoffeeBreakPreference p : list) {
-            responseJson += coffeeBreakPreferenceService.getAsListElement(p);
-        }
-
-        return responseJson + "</ul>";
-    }
-
 
     @PostMapping("/addPreference")
     @Qualifier("CoffeeBreakService")
-    public void addCoffeeBreakPreference(@RequestBody CoffeeBreakPreference coffeeBreakPreference){
-        coffeeBreakPreferenceService.addCoffeeBreakPreference(coffeeBreakPreference);
+    public void addCoffeeBreakPreference(@RequestBody String payload){
+        coffeeBreakPreferenceService.saveJson(payload);
     }
 }
