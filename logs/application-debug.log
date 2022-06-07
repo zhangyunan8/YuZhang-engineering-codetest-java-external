@@ -1,0 +1,359 @@
+2022-06-07 01:24:12 [main] INFO  c.a.c.TestAwinCoffeeBreakApplication - Starting TestAwinCoffeeBreakApplication using Java 11.0.15.1 on DESKTOP-RKNGMLS with PID 22568 (K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external\target\classes started by Yu Zhang in K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external)
+2022-06-07 01:24:12 [main] DEBUG c.a.c.TestAwinCoffeeBreakApplication - Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-06-07 01:24:12 [main] INFO  c.a.c.TestAwinCoffeeBreakApplication - No active profile set, falling back to default profiles: default
+2022-06-07 01:24:13 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2022-06-07 01:24:13 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 3 JPA repository interfaces.
+2022-06-07 01:24:14 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-07 01:24:14 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-07 01:24:14 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-06-07 01:24:14 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-07 01:24:14 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1948 ms
+2022-06-07 01:24:15 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-07 01:24:15 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-06-07 01:24:15 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-06-07 01:24:15 [task-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 01:24:15 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 01:24:15 [task-1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.23.Final
+2022-06-07 01:24:15 [task-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 01:24:15 [task-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-06-07 01:24:15 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-07 01:24:15 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2022-06-07 01:24:16 [task-1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 01:24:16 [task-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 01:24:16 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2022-06-07 01:24:16 [main] INFO  c.a.c.TestAwinCoffeeBreakApplication - Started TestAwinCoffeeBreakApplication in 4.511 seconds (JVM running for 6.138)
+2022-06-07 01:24:25 [http-nio-8080-exec-10] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 01:24:25 [http-nio-8080-exec-10] DEBUG c.a.c.c.CoffeeBreakPreferenceController - /today: format: json
+2022-06-07 01:24:25 [http-nio-8080-exec-10] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 01:24:25 [http-nio-8080-exec-10] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 01:24:25 [http-nio-8080-exec-10] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 01:44:43 [http-nio-8080-exec-5] DEBUG c.a.c.c.CoffeeBreakPreferenceController - /today: format: json
+2022-06-07 01:44:43 [http-nio-8080-exec-5] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 01:44:43 [http-nio-8080-exec-5] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 01:54:04 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 01:54:04 [SpringContextShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-06-07 01:54:04 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-06-07 01:54:04 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-06-07 01:54:04 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-06-07 01:58:53 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Starting AwinCoffeeBreakApplication using Java 11.0.15.1 on DESKTOP-RKNGMLS with PID 20640 (K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external\target\classes started by Yu Zhang in K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external)
+2022-06-07 01:58:53 [main] DEBUG c.a.c.AwinCoffeeBreakApplication - Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-06-07 01:58:53 [main] INFO  c.a.c.AwinCoffeeBreakApplication - No active profile set, falling back to default profiles: default
+2022-06-07 01:58:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2022-06-07 01:58:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 3 JPA repository interfaces.
+2022-06-07 01:58:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-07 01:58:54 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-07 01:58:54 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-06-07 01:58:54 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-07 01:58:54 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1504 ms
+2022-06-07 01:58:54 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-07 01:58:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-06-07 01:58:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-06-07 01:58:55 [task-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 01:58:55 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 01:58:55 [task-1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.23.Final
+2022-06-07 01:58:55 [task-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 01:58:55 [task-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-06-07 01:58:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-07 01:58:55 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2022-06-07 01:58:56 [task-1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 01:58:56 [task-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 01:58:56 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2022-06-07 01:58:56 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Started AwinCoffeeBreakApplication in 3.989 seconds (JVM running for 6.164)
+2022-06-07 01:59:38 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 01:59:58 [http-nio-8080-exec-4] DEBUG c.a.c.c.CoffeeBreakPreferenceController - /today: format: json
+2022-06-07 01:59:58 [http-nio-8080-exec-4] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 01:59:58 [http-nio-8080-exec-4] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:12:07 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 02:12:07 [SpringContextShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-06-07 02:12:07 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-06-07 02:12:07 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-06-07 02:12:07 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-06-07 02:12:13 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Starting AwinCoffeeBreakApplication using Java 11.0.15.1 on DESKTOP-RKNGMLS with PID 15264 (K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external\target\classes started by Yu Zhang in K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external)
+2022-06-07 02:12:13 [main] DEBUG c.a.c.AwinCoffeeBreakApplication - Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-06-07 02:12:13 [main] INFO  c.a.c.AwinCoffeeBreakApplication - No active profile set, falling back to default profiles: default
+2022-06-07 02:12:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2022-06-07 02:12:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2022-06-07 02:12:15 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-07 02:12:15 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-07 02:12:15 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-06-07 02:12:15 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-07 02:12:15 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1438 ms
+2022-06-07 02:12:15 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-07 02:12:15 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-06-07 02:12:15 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-06-07 02:12:15 [task-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 02:12:15 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 02:12:15 [task-1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.23.Final
+2022-06-07 02:12:15 [task-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 02:12:16 [task-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-06-07 02:12:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-07 02:12:16 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2022-06-07 02:12:16 [task-1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 02:12:16 [task-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 02:12:16 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2022-06-07 02:12:16 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Started AwinCoffeeBreakApplication in 3.686 seconds (JVM running for 5.028)
+2022-06-07 02:12:41 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 02:12:41 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 02:12:41 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:12:41 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:13:37 [http-nio-8080-exec-3] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 02:13:37 [http-nio-8080-exec-3] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:13:37 [http-nio-8080-exec-3] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:13:37 [http-nio-8080-exec-3] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:14:55 [http-nio-8080-exec-8] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 02:14:55 [http-nio-8080-exec-8] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:14:55 [http-nio-8080-exec-8] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:14:55 [http-nio-8080-exec-8] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:14:55 [http-nio-8080-exec-8] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:32:06 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 02:32:06 [SpringContextShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-06-07 02:32:06 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-06-07 02:32:06 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-06-07 02:32:06 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-06-07 02:32:12 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Starting AwinCoffeeBreakApplication using Java 11.0.15.1 on DESKTOP-RKNGMLS with PID 9680 (K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external\target\classes started by Yu Zhang in K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external)
+2022-06-07 02:32:12 [main] DEBUG c.a.c.AwinCoffeeBreakApplication - Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-06-07 02:32:12 [main] INFO  c.a.c.AwinCoffeeBreakApplication - No active profile set, falling back to default profiles: default
+2022-06-07 02:32:13 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2022-06-07 02:32:13 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
+2022-06-07 02:32:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-07 02:32:13 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-07 02:32:13 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-06-07 02:32:14 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-07 02:32:14 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1435 ms
+2022-06-07 02:32:14 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-07 02:32:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-06-07 02:32:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-06-07 02:32:14 [task-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 02:32:14 [task-1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.23.Final
+2022-06-07 02:32:14 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 02:32:14 [task-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 02:32:14 [task-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-06-07 02:32:14 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-07 02:32:14 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2022-06-07 02:32:15 [task-1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 02:32:15 [task-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 02:32:15 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2022-06-07 02:32:15 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Started AwinCoffeeBreakApplication in 3.733 seconds (JVM running for 5.039)
+2022-06-07 02:32:21 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 02:32:21 [http-nio-8080-exec-2] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 02:32:21 [http-nio-8080-exec-2] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:32:21 [http-nio-8080-exec-2] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:32:58 [http-nio-8080-exec-3] DEBUG c.a.c.c.CoffeeBreakPreferenceController - /today: format: json
+2022-06-07 02:32:58 [http-nio-8080-exec-3] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 02:32:58 [http-nio-8080-exec-3] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:32:58 [http-nio-8080-exec-3] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:33:12 [http-nio-8080-exec-4] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 02:33:12 [http-nio-8080-exec-4] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:33:12 [http-nio-8080-exec-4] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:35:32 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 02:35:32 [SpringContextShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-06-07 02:35:32 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-06-07 02:35:32 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-06-07 02:35:32 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-06-07 02:35:39 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Starting AwinCoffeeBreakApplication using Java 11.0.15.1 on DESKTOP-RKNGMLS with PID 7712 (K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external\target\classes started by Yu Zhang in K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external)
+2022-06-07 02:35:39 [main] DEBUG c.a.c.AwinCoffeeBreakApplication - Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-06-07 02:35:39 [main] INFO  c.a.c.AwinCoffeeBreakApplication - No active profile set, falling back to default profiles: default
+2022-06-07 02:35:40 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2022-06-07 02:35:40 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2022-06-07 02:35:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-07 02:35:40 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-07 02:35:40 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-06-07 02:35:40 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-07 02:35:40 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1332 ms
+2022-06-07 02:35:40 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-07 02:35:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-06-07 02:35:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-06-07 02:35:41 [task-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 02:35:41 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 02:35:41 [task-1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.23.Final
+2022-06-07 02:35:41 [task-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 02:35:41 [task-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-06-07 02:35:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-07 02:35:41 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2022-06-07 02:35:41 [task-1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 02:35:41 [task-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 02:35:42 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2022-06-07 02:35:42 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Started AwinCoffeeBreakApplication in 3.615 seconds (JVM running for 5.011)
+2022-06-07 02:35:56 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 02:35:56 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 02:35:56 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:35:56 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:38:38 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 02:38:38 [SpringContextShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-06-07 02:38:38 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-06-07 02:38:38 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-06-07 02:38:38 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-06-07 02:38:44 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Starting AwinCoffeeBreakApplication using Java 11.0.15.1 on DESKTOP-RKNGMLS with PID 19116 (K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external\target\classes started by Yu Zhang in K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external)
+2022-06-07 02:38:44 [main] DEBUG c.a.c.AwinCoffeeBreakApplication - Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-06-07 02:38:44 [main] INFO  c.a.c.AwinCoffeeBreakApplication - No active profile set, falling back to default profiles: default
+2022-06-07 02:38:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2022-06-07 02:38:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 3 JPA repository interfaces.
+2022-06-07 02:38:45 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-07 02:38:45 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-07 02:38:45 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-06-07 02:38:45 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-07 02:38:45 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1353 ms
+2022-06-07 02:38:45 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-07 02:38:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-06-07 02:38:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-06-07 02:38:45 [task-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 02:38:45 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 02:38:46 [task-1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.23.Final
+2022-06-07 02:38:46 [task-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 02:38:46 [task-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-06-07 02:38:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-07 02:38:46 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2022-06-07 02:38:46 [task-1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 02:38:46 [task-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 02:38:47 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2022-06-07 02:38:47 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Started AwinCoffeeBreakApplication in 3.561 seconds (JVM running for 4.903)
+2022-06-07 02:38:53 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 02:38:53 [http-nio-8080-exec-2] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 02:38:53 [http-nio-8080-exec-2] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:38:53 [http-nio-8080-exec-2] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:41:20 [http-nio-8080-exec-4] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 02:41:20 [http-nio-8080-exec-4] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:41:20 [http-nio-8080-exec-4] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:42:39 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m2s937ms477µs).
+2022-06-07 02:44:18 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m39s577ms704µs399ns).
+2022-06-07 02:48:57 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 02:48:57 [SpringContextShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-06-07 02:48:57 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-06-07 02:48:57 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-06-07 02:48:57 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-06-07 02:49:03 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Starting AwinCoffeeBreakApplication using Java 11.0.15.1 on DESKTOP-RKNGMLS with PID 1328 (K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external\target\classes started by Yu Zhang in K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external)
+2022-06-07 02:49:03 [main] DEBUG c.a.c.AwinCoffeeBreakApplication - Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-06-07 02:49:03 [main] INFO  c.a.c.AwinCoffeeBreakApplication - No active profile set, falling back to default profiles: default
+2022-06-07 02:49:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2022-06-07 02:49:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 3 JPA repository interfaces.
+2022-06-07 02:49:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-07 02:49:05 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-07 02:49:05 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-06-07 02:49:05 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-07 02:49:05 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1576 ms
+2022-06-07 02:49:05 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-07 02:49:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-06-07 02:49:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-06-07 02:49:05 [task-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 02:49:05 [task-1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.23.Final
+2022-06-07 02:49:05 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 02:49:05 [task-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 02:49:05 [task-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-06-07 02:49:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-07 02:49:06 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2022-06-07 02:49:06 [task-1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 02:49:06 [task-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 02:49:06 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2022-06-07 02:49:06 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Started AwinCoffeeBreakApplication in 4.023 seconds (JVM running for 5.363)
+2022-06-07 02:49:09 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 02:49:17 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 02:49:17 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 02:49:18 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 03:16:46 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 03:16:46 [SpringContextShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-06-07 03:16:46 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-06-07 03:16:46 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-06-07 03:16:46 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-06-07 03:16:53 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Starting AwinCoffeeBreakApplication using Java 11.0.15.1 on DESKTOP-RKNGMLS with PID 29968 (K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external\target\classes started by Yu Zhang in K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external)
+2022-06-07 03:16:53 [main] DEBUG c.a.c.AwinCoffeeBreakApplication - Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-06-07 03:16:53 [main] INFO  c.a.c.AwinCoffeeBreakApplication - No active profile set, falling back to default profiles: default
+2022-06-07 03:16:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2022-06-07 03:16:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 3 JPA repository interfaces.
+2022-06-07 03:16:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-07 03:16:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-07 03:16:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-06-07 03:16:55 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-07 03:16:55 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1873 ms
+2022-06-07 03:16:55 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-07 03:16:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-06-07 03:16:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-06-07 03:16:56 [task-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 03:16:56 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 03:16:56 [task-1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.23.Final
+2022-06-07 03:16:56 [task-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 03:16:56 [task-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-06-07 03:16:56 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-07 03:16:56 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2022-06-07 03:16:57 [task-1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 03:16:57 [task-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 03:16:57 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2022-06-07 03:16:57 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Started AwinCoffeeBreakApplication in 4.567 seconds (JVM running for 5.995)
+2022-06-07 03:17:03 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 03:17:14 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 03:17:14 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 03:17:14 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 03:22:27 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 03:22:27 [SpringContextShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-06-07 03:22:27 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-06-07 03:22:27 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-06-07 03:22:27 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-06-07 03:22:33 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Starting AwinCoffeeBreakApplication using Java 11.0.15.1 on DESKTOP-RKNGMLS with PID 29560 (K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external\target\classes started by Yu Zhang in K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external)
+2022-06-07 03:22:33 [main] DEBUG c.a.c.AwinCoffeeBreakApplication - Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-06-07 03:22:33 [main] INFO  c.a.c.AwinCoffeeBreakApplication - No active profile set, falling back to default profiles: default
+2022-06-07 03:22:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2022-06-07 03:22:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 3 JPA repository interfaces.
+2022-06-07 03:22:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-07 03:22:35 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-07 03:22:35 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-06-07 03:22:35 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-07 03:22:35 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1405 ms
+2022-06-07 03:22:35 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-07 03:22:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-06-07 03:22:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-06-07 03:22:35 [task-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 03:22:35 [task-1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.23.Final
+2022-06-07 03:22:35 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 03:22:35 [task-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 03:22:36 [task-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-06-07 03:22:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-07 03:22:36 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2022-06-07 03:22:36 [task-1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 03:22:36 [task-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 03:22:37 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2022-06-07 03:22:37 [main] INFO  c.a.c.AwinCoffeeBreakApplication - Started AwinCoffeeBreakApplication in 3.859 seconds (JVM running for 5.166)
+2022-06-07 03:22:39 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 03:22:39 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - /today: format: json
+2022-06-07 03:22:46 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - getJsonForResponse
+2022-06-07 03:22:46 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 03:22:46 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - JSON:for loop
+2022-06-07 03:33:30 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 03:33:30 [SpringContextShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-06-07 03:33:30 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-06-07 03:33:30 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-06-07 03:33:30 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-06-07 03:35:45 [main] INFO  c.a.c.TestAwinCoffeeBreakApplication - Starting TestAwinCoffeeBreakApplication using Java 11.0.15.1 on DESKTOP-RKNGMLS with PID 25416 (K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external\target\classes started by Yu Zhang in K:\personal\YuZ\Awin\repo\YuZhang-engineering-codetest-java-external)
+2022-06-07 03:35:45 [main] DEBUG c.a.c.TestAwinCoffeeBreakApplication - Running with Spring Boot v2.4.0, Spring v5.3.1
+2022-06-07 03:35:45 [main] INFO  c.a.c.TestAwinCoffeeBreakApplication - No active profile set, falling back to default profiles: default
+2022-06-07 03:35:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2022-06-07 03:35:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 3 JPA repository interfaces.
+2022-06-07 03:35:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-06-07 03:35:47 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-06-07 03:35:47 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-06-07 03:35:47 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-06-07 03:35:47 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1422 ms
+2022-06-07 03:35:47 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-07 03:35:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-06-07 03:35:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-06-07 03:35:47 [task-1] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-07 03:35:47 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-07 03:35:47 [task-1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.23.Final
+2022-06-07 03:35:47 [task-1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-07 03:35:48 [task-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-06-07 03:35:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-07 03:35:48 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2022-06-07 03:35:48 [task-1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-07 03:35:48 [task-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-07 03:35:49 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2022-06-07 03:35:49 [main] INFO  c.a.c.TestAwinCoffeeBreakApplication - Started TestAwinCoffeeBreakApplication in 3.61 seconds (JVM running for 4.805)
+2022-06-07 03:35:53 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-07 03:35:53 [http-nio-8080-exec-1] DEBUG c.a.c.c.CoffeeBreakPreferenceController - /today: format: json
+2022-06-07 03:35:53 [http-nio-8080-exec-1] DEBUG c.a.c.s.CoffeeBreakPreferenceServiceImpl - getJsonForResponse
+2022-06-07 03:35:53 [http-nio-8080-exec-1] DEBUG c.a.c.s.CoffeeBreakPreferenceServiceImpl - JSON:for loop
+2022-06-07 03:35:53 [http-nio-8080-exec-1] DEBUG c.a.c.s.CoffeeBreakPreferenceServiceImpl - JSON:for loop
+2022-06-07 03:36:00 [http-nio-8080-exec-4] DEBUG c.a.c.s.CoffeeBreakPreferenceServiceImpl - getJsonForResponse
+2022-06-07 03:36:00 [http-nio-8080-exec-4] DEBUG c.a.c.s.CoffeeBreakPreferenceServiceImpl - JSON:for loop
+2022-06-07 03:36:00 [http-nio-8080-exec-4] DEBUG c.a.c.s.CoffeeBreakPreferenceServiceImpl - JSON:for loop
+2022-06-07 03:36:09 [http-nio-8080-exec-8] DEBUG c.a.c.s.CoffeeBreakPreferenceServiceImpl - getJsonForResponse
+2022-06-07 03:36:09 [http-nio-8080-exec-8] DEBUG c.a.c.s.CoffeeBreakPreferenceServiceImpl - JSON:for loop
+2022-06-07 03:36:09 [http-nio-8080-exec-8] DEBUG c.a.c.s.CoffeeBreakPreferenceServiceImpl - JSON:for loop
+2022-06-07 03:36:09 [http-nio-8080-exec-8] DEBUG c.a.c.s.CoffeeBreakPreferenceServiceImpl - JSON:for loop
