@@ -5,6 +5,8 @@ import com.awin.coffeebreak.entity.CoffeeBreakPreference;
 
 import java.time.Instant;
 import java.util.List;
+import java.util.Map;
+
 
 public interface  CoffeeBreakPreferenceService {
 
@@ -18,4 +20,6 @@ public interface  CoffeeBreakPreferenceService {
     public String getAsListElement(CoffeeBreakPreference coffeeBreakPreference);
     public void getAllPreferenceContent(Content content, String format);
     public void getPreferencesForTodayContent(Content content, String format);
+    public void addOnePre(Map<String,Object> map);
+
 }

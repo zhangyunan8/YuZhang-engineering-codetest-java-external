@@ -43,6 +43,17 @@ Implementation
     •	Build docker image
     •	Run docker image in a container
     •	Test
+    http://localhost:8080/addOnePreference
+    {"id":4, "type":"drink", "subType":"tea22",
+    "requestedBy":
+    {"name":"tester", "email":"test123@test.com","slackIdentifier":"ADC123"},
+        "requestedDate":"2022-06-05T22:32:10.301046Z",
+        "details": {
+                    "size": "large",
+                    "coffee": "black",
+                    "cup": "1"
+                }
+    }
 Testing
     •	Manual: Postman
     •	Automated: Junit

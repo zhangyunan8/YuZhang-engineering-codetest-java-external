@@ -1,6 +1,7 @@
 package com.awin.coffeebreak.services;
 
 import com.awin.coffeebreak.entity.CoffeeBreakPreference;
+import com.awin.coffeebreak.entity.StaffMember;
 import com.awin.coffeebreak.repository.CoffeeBreakPreferenceRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
@@ -15,6 +16,7 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service("CoffeeBreakService")
@@ -70,6 +72,27 @@ public class CoffeeBreakPreferenceServiceImpl implements CoffeeBreakPreferenceSe
             coffeeBreakPreferenceRepository.save(coffeeBreakPreference);
         }
     }
+    public void addOnePre(Map<String,Object> map){
+        CoffeeBreakPreference cf = new CoffeeBreakPreference();
+        StaffMember person = new StaffMember();
+        Map<String,Object> requestedBy = (Map<String,Object>)map.get("requestedBy");
+        person.setName((String)requestedBy.get("name"));
+        person.setEmail((String)requestedBy.get("email"));
+        person.setSlackIdentifier((String)requestedBy.get("slackIdentifier"));
+        Map<String,String> details = (Map<String,String>)map.get("details");
+        String type = (String)map.get("type");
+        String subType = (String)map.get("subType");
+        Instant requestedDate = Instant.parse((String)map.get("requestedDate"));
+
+        cf.setType(type);
+        cf.setSubType(subType);
+        cf.setRequestedDate(requestedDate);
+        cf.setDetails(details);
+        cf.setRequestedBy(person);
+
+        coffeeBreakPreferenceRepository.save(cf);
+
+        }
 
 
     public String getAsJson(CoffeeBreakPreference coffeeBreakPreference) {

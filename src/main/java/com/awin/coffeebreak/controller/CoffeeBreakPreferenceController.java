@@ -8,6 +8,7 @@ import com.awin.coffeebreak.services.Content;
 import com.awin.coffeebreak.services.SlackNotifier;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -81,5 +82,11 @@ public class CoffeeBreakPreferenceController {
     @Qualifier("CoffeeBreakService")
     public void addCoffeeBreakPreference(@RequestBody String payload){
         coffeeBreakPreferenceService.saveJson(payload);
+    }
+    @PostMapping("/addOnePreference")
+    @Qualifier("CoffeeBreakService")
+    public void addPreForOne(@RequestBody Map<String,Object> map){
+        coffeeBreakPreferenceService.addOnePre(map);
+
     }
 }
