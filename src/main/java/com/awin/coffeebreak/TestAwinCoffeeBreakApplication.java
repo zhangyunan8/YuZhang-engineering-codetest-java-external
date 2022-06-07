@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Map;
-@SpringBootApplication
+//@SpringBootApplication
 public class TestAwinCoffeeBreakApplication {
 
     private static final Logger log = LoggerFactory.getLogger(TestAwinCoffeeBreakApplication.class);
