@@ -22,6 +22,7 @@ public class CoffeeBreakPreference {
 
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    @Column
     private Long id;
 
     @Column

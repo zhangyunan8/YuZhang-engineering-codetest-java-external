@@ -12,6 +12,7 @@ public class StaffMember {
 
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE) // for the issue of "ids for this class must be manually assigned before calling save()"
+    @Column
     private Long id;
 
     @Column
@@ -23,8 +24,8 @@ public class StaffMember {
     @Column
     private String slackIdentifier;
 
-    @JsonManagedReference
-    @OneToMany(mappedBy="requestedBy")
+    @JsonManagedReference // for infinite recursion
+    @OneToMany(mappedBy="requestedBy") //requestedBy
     private List<CoffeeBreakPreference> coffeeBreakPreferences = new ArrayList<>();
 
     @ManyToOne

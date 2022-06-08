@@ -9,4 +9,5 @@ import java.util.List;
 
 public interface StaffMemberRepository extends CrudRepository<StaffMember, Integer> {
     List<StaffMember> findByTeam(Team team);
+    List<StaffMember> findStaffMemberByTeam(int teamId);
 }

@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import com.awin.coffeebreak.services.TeamService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ public class CoffeeBreakPreferenceController {
     //public CoffeeBreakPreferenceRepository coffeeBreakPreferenceRepository;
     private final Logger log = LoggerFactory.getLogger(this.getClass());
     private final CoffeeBreakPreferenceService coffeeBreakPreferenceService;
+    private final TeamService teamService;
     public StaffMemberRepository staffMemberRepository;
     /*
     public CoffeeBreakPreferenceController(
@@ -35,16 +37,27 @@ public class CoffeeBreakPreferenceController {
     */
     @Autowired
     public CoffeeBreakPreferenceController(
-            CoffeeBreakPreferenceService coffeeBreakPreferenceService
-    ) {
+            CoffeeBreakPreferenceService coffeeBreakPreferenceService,
+            TeamService teamService) {
         this.coffeeBreakPreferenceService = coffeeBreakPreferenceService;
+        this.teamService = teamService;
     }
 
-    @GetMapping(path = "/findAll")
+    @GetMapping(path = "/CoffeeBreakPreference")
     @Qualifier("CoffeeBreakService")
     public ResponseEntity<?> findAll(@RequestParam("format") String format){
         Content content = new Content("", "");
         coffeeBreakPreferenceService.getAllPreferenceContent(content, format);
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.valueOf(content.getContentType()))
+                .body(content.getResponseContent());
+    }
+    @GetMapping(path = "/CoffeeBreakPreference/{name}")
+    @Qualifier("CoffeeBreakService")
+    public ResponseEntity<?> findAll(@RequestParam("format") String format, @PathVariable("name") String teamName){
+        Content content = new Content("", "");
+        coffeeBreakPreferenceService.getCoffeeBreakPreferenceByTeam(teamName, content, format);
 
         return ResponseEntity.ok()
                 .contentType(MediaType.valueOf(content.getContentType()))
@@ -88,5 +101,27 @@ public class CoffeeBreakPreferenceController {
     public void addPreForOne(@RequestBody Map<String,Object> map){
         coffeeBreakPreferenceService.addOnePre(map);
 
+    }
+
+    // Team endpoints
+    @GetMapping("/team")
+    @Qualifier("TeamService")
+    public ResponseEntity<?> findAllTeams(@RequestParam("format") String format){
+        Content content = new Content("", "");
+        teamService.findAll(content, format);
+        return ResponseEntity.ok()
+                .contentType(MediaType.valueOf(content.getContentType()))
+                .body(content.getResponseContent());
+    }
+    @GetMapping("/team/{name}")
+    @Qualifier("TeamService")
+    public ResponseEntity<?> findCoffeeBreakPreferenceByTeam(@PathVariable("name") String teamName, @RequestParam("format") String format){
+        Content content = new Content("", "");
+
+            teamService.findByTeamName(content, format, teamName);
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.valueOf(content.getContentType()))
+                .body(content.getResponseContent());
     }
 }

@@ -9,17 +9,18 @@ public class Team {
 
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    @Column
     private Long Id;
     @OneToMany(mappedBy = "team")
     private List<StaffMember> staff;
     @Column
-    private String TeamName;
+    private String teamName;
     @Column
-    private String ContactPersonName;
+    private String contactPersonName;
     @Column
-    private String ContactEmail;
+    private String contactEmail;
     @Column
-    private String Location;
+    private String location;
 
     public Team(){}
 
@@ -28,19 +29,19 @@ public class Team {
     }
 
     public String getTeamName() {
-        return TeamName;
+        return this.teamName;
     }
 
     public String getContactPersonName() {
-        return ContactPersonName;
+        return this.contactPersonName;
     }
 
     public String getContactEmail() {
-        return ContactEmail;
+        return this.contactEmail;
     }
 
     public String getLocation() {
-        return Location;
+        return this.location;
     }
 
     public void setId(int id){
@@ -48,18 +49,18 @@ public class Team {
     }
 
     public void setTeamName(String teamName) {
-        TeamName = teamName;
+        this.teamName = teamName;
     }
 
     public void setContactPersonName(String contactPersonName) {
-        ContactPersonName = contactPersonName;
+        this.contactPersonName = contactPersonName;
     }
 
     public void setContactEmail(String contactEmail) {
-        ContactEmail = contactEmail;
+        this.contactEmail = contactEmail;
     }
 
     public void setLocation(String location) {
-        Location = location;
+        this.location = location;
     }
 }

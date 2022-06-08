@@ -22,4 +22,7 @@ public interface  CoffeeBreakPreferenceService {
     public void getPreferencesForTodayContent(Content content, String format);
     public void addOnePre(Map<String,Object> map);
 
+    public List<CoffeeBreakPreference> findCoffeeBreakPreferenceByTeam(String teamName, Content content, String format);
+    public void getCoffeeBreakPreferenceByTeam(String teamName, Content content, String format);
+
 }

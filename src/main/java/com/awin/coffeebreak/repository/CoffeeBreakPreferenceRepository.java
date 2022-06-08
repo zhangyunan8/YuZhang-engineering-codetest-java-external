@@ -4,6 +4,9 @@ import com.awin.coffeebreak.entity.CoffeeBreakPreference;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+
+import org.hibernate.annotations.Parameter;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -14,6 +17,20 @@ public interface CoffeeBreakPreferenceRepository extends CrudRepository<CoffeeBr
 
     List<CoffeeBreakPreference> findByRequestedDateBetween(Instant start, Instant end);
     List<CoffeeBreakPreference> findAll();
+    /*
+    List<CoffeeBreakPreference> findCoffeeBreakPreferenceByTeam(@Param("teamName") String teamName, Pageable pageable);
+    From client, such as GUI can pass the following parameters for paging
+        .param("page", "5")
+        .param("size", "10")
+        .param("sort", "id,desc")   // <-- no space after comma!
+        .param("sort", "name,asc")) // <-- no space after comma!
+        .andExpect(status().isOk())
+     http://localhost:8080/team/sales?page=2&size=50&sort=id,desc
+     */
+    //@Query(value="select t.team_name, s.name, s.email, s.slack_identifier, c.sub_type, c.type, c.requested_date from coffee_break_preference c, staff_member s, team t where c.staff_id = s.Id and s.team_id = t.Id and t.team_name = :teamName",
+    //    nativeQuery = true)
+    @Query("select p from CoffeeBreakPreference p where p.requestedBy = (select s from StaffMember s where s.team = (select t from Team t where t.teamName= :teamName)) ")
+    List<CoffeeBreakPreference> findCoffeeBreakPreferenceByTeam(@Param("teamName") String teamName);
     /** the implementation should not be here, move to implementation service class **/
     /*
     default List<CoffeeBreakPreference> getPreferencesForToday() {

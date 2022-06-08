@@ -91,49 +91,28 @@ public class CoffeeBreakPreferenceServiceImpl implements CoffeeBreakPreferenceSe
         cf.setRequestedBy(person);
 
         coffeeBreakPreferenceRepository.save(cf);
+        notify(person.getSlackIdentifier(), person.getEmail(), cf, person);
+        }
+    private void notify(String slackId, String email, CoffeeBreakPreference cf, StaffMember person){
+        boolean flag = false;
+        if (slackId == "" || slackId.isEmpty()){
+            //send email
+            Emailer mailer = new Emailer();
+            flag = mailer.Send("somebody@awin.com", "another@awin.com", "onemore@awin.com", "subject", "hello, hello");
+        }
+        else {
+            //slack
+            List<CoffeeBreakPreference> l = new ArrayList<>();
+            l.add(cf);
+            SlackNotifier slack = new SlackNotifier();
+            flag = slack.notifyStaffMember(person, l);
 
         }
+        if (!flag){ // do something to let user knows
+             }
 
-
-    public String getAsJson(CoffeeBreakPreference coffeeBreakPreference) {
-        System.out.println("getId: "+ coffeeBreakPreference.getId() +" type: " + coffeeBreakPreference.getType() + ", details: " +coffeeBreakPreference.getDetails().toString());
-        ObjectMapper mapper = new ObjectMapper();
-        String jsonString = "";
-        try {
-            jsonString = mapper.writeValueAsString(coffeeBreakPreference);
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-        return jsonString;
-        /*
-        return "{" +
-                "\"id\":" + coffeeBreakPreference.getId() +
-                ", \"type\":\"" + coffeeBreakPreference.getType() + '"' +
-                ", \"subType\":\"" + coffeeBreakPreference.getSubType() + '"' +
-                ", \"requestedBy\":\"" + coffeeBreakPreference.getRequestedBy().getName() + '"' + // changed to get name, requestedBy is an object
-                ", \"requestedDate\":\"" + coffeeBreakPreference.getRequestedDate() + '"' +
-                ", \"details\":\"" + coffeeBreakPreference.getDetails().toString() + '"' + // convert Map to string
-                '}';
-
-         */
     }
-
-    public String getAsXml(CoffeeBreakPreference coffeeBreakPreference) {
-        return "<preference type=\""+coffeeBreakPreference.getType()+"\" subtype=\""+coffeeBreakPreference.getSubType()+"\">" +
-                "<requestedBy>"+coffeeBreakPreference.getRequestedBy().getName()+"</requestedBy>" +
-                "<details>"+coffeeBreakPreference.getDetails().toString()+"</details>" +
-                "</preference>";
-    }
-
-    public String getAsListElement(CoffeeBreakPreference coffeeBreakPreference) {
-        final String detailsString = coffeeBreakPreference.getDetails().keySet().stream()
-                .map(e -> e + " : " + coffeeBreakPreference.getDetails().get(e))
-                .collect(Collectors.joining(","));
-
-        return "<li>" + coffeeBreakPreference.getRequestedBy().getName() + " would like a " + coffeeBreakPreference.getSubType() + ". (" + detailsString + ")</li>";
-    }
-    public void getAllPreferenceContent(Content content, String format){
+ public void getAllPreferenceContent(Content content, String format){
         List<CoffeeBreakPreference> t = getAllPreference();
         if (format == null) {
             format = "html";
@@ -147,6 +126,20 @@ public class CoffeeBreakPreferenceServiceImpl implements CoffeeBreakPreferenceSe
         }
 
         List<CoffeeBreakPreference> t = getPreferencesForToday();
+
+        getContent(format, t, content);
+    }
+    public List<CoffeeBreakPreference> findCoffeeBreakPreferenceByTeam(String teamName, Content content, String format){
+        List<CoffeeBreakPreference> cp = new ArrayList<>();
+        coffeeBreakPreferenceRepository.findCoffeeBreakPreferenceByTeam(teamName).forEach(cp::add);
+        return cp;
+    }
+    public void getCoffeeBreakPreferenceByTeam(String teamName, Content content, String format){
+        if (format == null) {
+            format = "html";
+        }
+
+        List<CoffeeBreakPreference> t = findCoffeeBreakPreferenceByTeam(teamName, content, format);
 
         getContent(format, t, content);
     }
@@ -202,6 +195,45 @@ public class CoffeeBreakPreferenceServiceImpl implements CoffeeBreakPreferenceSe
         }
 
         return responseJson + "</ul>";
+    }
+
+    public String getAsJson(CoffeeBreakPreference coffeeBreakPreference) {
+        System.out.println("getId: "+ coffeeBreakPreference.getId() +" type: " + coffeeBreakPreference.getType() + ", details: " +coffeeBreakPreference.getDetails().toString());
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonString = "";
+        try {
+            jsonString = mapper.writeValueAsString(coffeeBreakPreference);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        return jsonString;
+        /*
+        return "{" +
+                "\"id\":" + coffeeBreakPreference.getId() +
+                ", \"type\":\"" + coffeeBreakPreference.getType() + '"' +
+                ", \"subType\":\"" + coffeeBreakPreference.getSubType() + '"' +
+                ", \"requestedBy\":\"" + coffeeBreakPreference.getRequestedBy().getName() + '"' + // changed to get name, requestedBy is an object
+                ", \"requestedDate\":\"" + coffeeBreakPreference.getRequestedDate() + '"' +
+                ", \"details\":\"" + coffeeBreakPreference.getDetails().toString() + '"' + // convert Map to string
+                '}';
+
+         */
+    }
+
+    public String getAsXml(CoffeeBreakPreference coffeeBreakPreference) {
+        return "<preference type=\""+coffeeBreakPreference.getType()+"\" subtype=\""+coffeeBreakPreference.getSubType()+"\">" +
+                "<requestedBy>"+coffeeBreakPreference.getRequestedBy().getName()+"</requestedBy>" +
+                "<details>"+coffeeBreakPreference.getDetails().toString()+"</details>" +
+                "</preference>";
+    }
+
+    public String getAsListElement(CoffeeBreakPreference coffeeBreakPreference) {
+        final String detailsString = coffeeBreakPreference.getDetails().keySet().stream()
+                .map(e -> e + " : " + coffeeBreakPreference.getDetails().get(e))
+                .collect(Collectors.joining(","));
+
+        return "<li>" + coffeeBreakPreference.getRequestedBy().getName() + " would like a " + coffeeBreakPreference.getSubType() + ". (" + detailsString + ")</li>";
     }
 
 }
