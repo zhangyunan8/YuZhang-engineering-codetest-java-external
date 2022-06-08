@@ -33,8 +33,8 @@ class CoffeeBreakPreferenceServiceImplTest {
 
     @BeforeEach
     void setUp() throws Exception {
-        staff = new StaffMember("Tester", "tester@somewhere.com", "ABC234");
-        mycp = new CoffeeBreakPreference(1,"drink", "tea", staff, Map.of("cup","1", "size","Large"));
+        //staff = new StaffMember("Tester", "tester@somewhere.com", "ABC234");
+        //mycp = new CoffeeBreakPreference(1,"drink", "tea", staff, Map.of("cup","1", "size","Large"));
 
 
     }
@@ -72,36 +72,39 @@ class CoffeeBreakPreferenceServiceImplTest {
 
     @Test
     void getPreferencesForToday() {
-        coffeeBreakPreferenceService.addCoffeeBreakPreference(mycp);
+        //coffeeBreakPreferenceService.addCoffeeBreakPreference(mycp);
         int response = coffeeBreakPreferenceService.getPreferencesForToday().size();
         assertEquals(1, response);
     }
     @Test
     void findByRequestedDateBetween() {
-        coffeeBreakPreferenceService.addCoffeeBreakPreference(mycp);
-        coffeeBreakPreferenceService.addCoffeeBreakPreference(new CoffeeBreakPreference(2, "drink", "tea", staff, Map.of("cup","1", "size","Small")));
+        //coffeeBreakPreferenceService.addCoffeeBreakPreference(mycp);
+        //coffeeBreakPreferenceService.addCoffeeBreakPreference(new CoffeeBreakPreference(2, "drink", "tea", staff, Map.of("cup","1", "size","Small")));
         int response = coffeeBreakPreferenceService.findByRequestedDateBetween(Instant.now().truncatedTo(ChronoUnit.DAYS),
                 Instant.now().truncatedTo(ChronoUnit.DAYS).plus(1, ChronoUnit.DAYS)).size();
-        assertEquals(2, response);
+        assertEquals(1, response);
     }
 
     @Test
     void getAllPreference() {
-        coffeeBreakPreferenceService.addCoffeeBreakPreference(mycp);
-        coffeeBreakPreferenceService.addCoffeeBreakPreference(new CoffeeBreakPreference(2, "drink", "tea", staff, Map.of("cup","1", "size","Small")));
-        coffeeBreakPreferenceService.addCoffeeBreakPreference(new CoffeeBreakPreference(3, "drink", "coffee", staff, Map.of("cup","1", "size","large", "coffee","black")));
+        //coffeeBreakPreferenceService.addCoffeeBreakPreference(mycp);
+        //coffeeBreakPreferenceService.addCoffeeBreakPreference(new CoffeeBreakPreference(2, "drink", "tea", staff, Map.of("cup","1", "size","Small")));
+        //coffeeBreakPreferenceService.addCoffeeBreakPreference(new CoffeeBreakPreference(3, "drink", "coffee", staff, Map.of("cup","1", "size","large", "coffee","black")));
 
         int response = coffeeBreakPreferenceService.getAllPreference().size();
-        assertEquals(3, response);
+        assertEquals(1, response);
     }
 
     @Test
     void addCoffeeBreakPreference() {
+
         int response = coffeeBreakPreferenceService.getAllPreference().size();
-        assertEquals(0, response);
+        assertEquals(1, response);
+        staff = new StaffMember("Tester", "tester@somewhere.com", "ABC234");
+        mycp = new CoffeeBreakPreference(5,"drink", "tea", staff, Map.of("cup","1", "size","Large"));
         coffeeBreakPreferenceService.addCoffeeBreakPreference(mycp);
         response = coffeeBreakPreferenceService.getAllPreference().size();
-        assertEquals(1, response);
+        assertEquals(2, response);
 
     }
 
